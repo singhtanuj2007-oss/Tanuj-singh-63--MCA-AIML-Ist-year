@@ -22,8 +22,8 @@ function App() {
     <div className="portfolio">
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <a className="brand" href="#home" aria-label="Krishna portfolio home">
-            Krishna<span>.</span>
+          <a className="brand" href="#home" aria-label="tanuj portfolio home">
+            Tanuj<span>.</span>
           </a>
           <div className="nav-links">
             <a href="#about">About</a>
@@ -39,7 +39,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">MCA Student &amp; Web Developer</p>
             <h1>
-              Hi, I'm <span>Krishna</span>
+              Hi, I'm <span>Tanuj singh</span>
             </h1>
             <p className="hero-description">
               I build clean, responsive and user-friendly websites using modern
@@ -66,7 +66,7 @@ function App() {
           </div>
           <div className="about-card">
             <p>
-              I am Krishna, a passionate web developer and MCA student at GLA
+              I am tanuj, a passionate web developer and MCA AIML student at GLA
               University. I enjoy turning ideas into polished digital experiences
               and continuously improving my skills.
             </p>
@@ -126,16 +126,16 @@ function App() {
             <h2>Have a project in mind?</h2>
           </div>
           <div className="contact-details">
-            <a href="mailto:krishna.kumar_mca26@gla.ac.in">
-              krishna.kumar_mca26@gla.ac.in
+            <a href="mailto:singhtanuj2007@gmail.com">
+              singhtanuj2007@gmail.com
             </a>
-            <a href="tel:+919369356608">+91 93693 56608</a>
+            <a href="tel:+919315056750">+91 9315056750</a>
           </div>
         </section>
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Krishna. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Tanuj. All rights reserved.</p>
       </footer>
     </div>
   );
