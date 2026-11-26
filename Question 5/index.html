@@ -1,20 +1,87 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Snake and Ladder Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Snake and Ladder</title>
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            width: 400px;
+        }
+
+        .cell {
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-
-    <h1>Snake and Ladder Game</h1>
-
+    <h2>Snake and Ladder</h2>
     <div id="board"></div>
 
+    <h3 id="position">Position: 0</h3>
     <button onclick="rollDice()">Roll Dice</button>
 
-    <h2 id="result">Position: 1</h2>
+    <script>
+        let position = 0;
 
-    <script src="script.js"></script>
+        let snakes = {
+            27: 5, 40: 3, 54: 31,
+            66: 45, 89: 53, 99: 41
+        };
 
+        let ladders = {
+            4: 25, 13: 46, 33: 49,
+            42: 63, 50: 69, 62: 81, 74: 92
+        };
+
+        let board = document.getElementById("board");
+
+        for (let i = 100; i >= 1; i--) {
+            let cell = document.createElement("div");
+            cell.className = "cell";
+            cell.id = "cell" + i;
+            cell.innerText = i;
+            board.appendChild(cell);
+        }
+
+        function rollDice() {
+            let dice = Math.floor(Math.random() * 6) + 1;
+
+            if (position + dice <= 100) {
+                position += dice;
+            }
+
+            if (snakes[position]) {
+                alert("Snake! Go down.");
+                position = snakes[position];
+            } else if (ladders[position]) {
+                alert("Ladder! Go up.");
+                position = ladders[position];
+            }
+
+            document.querySelectorAll(".cell").forEach(c => {
+                c.style.backgroundColor = "";
+                if (c.innerText == position) {
+                    c.style.backgroundColor = "lightgreen";
+                    c.innerText = position + " 🟢";
+                } else {
+                    c.innerText = c.id.replace("cell", "");
+                }
+            });
+
+            document.getElementById("position").innerText =
+                "Dice: " + dice + " | Position: " + position;
+
+            if (position === 100) {
+                alert("Congratulations! You Won!");
+                position = 0;
+            }
+        }
+    </script>
 </body>
 </html>

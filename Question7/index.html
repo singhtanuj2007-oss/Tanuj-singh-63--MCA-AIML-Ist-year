@@ -1,19 +1,67 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>University Finder</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>University Finder</h2>
 
-    <h1>University Finder</h1>
-
-    <input type="text" id="country" placeholder="Enter Country Name">
-
-    <button onclick="getUniversities()">Search</button>
+    <input type="text" id="country" placeholder="Enter country">
+    <button onclick="searchUniversity()">Search</button>
 
     <div id="result"></div>
 
-    <script src="script.js"></script>
+    <script>
+        async function searchUniversity() {
+            let country = document.getElementById("country").value.trim();
+            let result = document.getElementById("result");
+
+            if (!country) {
+                result.innerHTML = "Please enter a country!";
+                return;
+            }
+
+            result.innerHTML = "Loading...";
+
+            try {
+                let response = await fetch(
+                    "https://universities.hipolabs.com/search?country=" +
+                    encodeURIComponent(country)
+                );
+
+                let data = await response.json();
+
+                result.innerHTML = "";
+
+                if (data.length === 0) {
+                    result.innerHTML = "No universities found!";
+                    return;
+                }
+
+                data.forEach(university => {
+                    let div = document.createElement("div");
+
+                    let name = document.createElement("h3");
+                    name.textContent = university.name;
+
+                    let state = document.createElement("p");
+                    state.textContent =
+                        "State: " + (university["state-province"] || "Not available");
+
+                    let link = document.createElement("a");
+                    link.href = university.web_pages[0];
+                    link.textContent = "Visit Website";
+                    link.target = "_blank";
+
+                    div.append(name, state, link);
+                    result.appendChild(div);
+                });
+
+            } catch (error) {
+                result.innerHTML = "Error fetching data!";
+            }
+        }
+    </script>
 </body>
 </html>
