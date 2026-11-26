@@ -2,19 +2,30 @@ import React from "react";
 import "./App.css";
 
 function App() {
-  const skills = ["HTML", "CSS", "JavaScript", "React"];
+  const skills = 
+  [ "HTML", 
+    "CSS", 
+    "JavaScript", 
+    "React",
+    "C++", 
+    "nodejs",
+    "express.js", 
+    "DSA",
+    "MySQL",
+    "Mongodb"
+   ];
   const projects = [
     {
-      title: "E-Commerce Website",
+      title: "Smart Personal Finance Tracker",
       description:
-        "A responsive shopping experience for browsing products, managing a cart, and completing purchases.",
-      tags: ["React", "CSS", "JavaScript"],
+        "A web-based application that helps users manage their income and expenses, track transactions, set budgets, and view financial analytics through an interactive dashboard.",
+      tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "Chart.js"],
     },
     {
-      title: "Library Management System",
+      title: "InAmigos Foundation Web Page ",
       description:
-        "A simple system for organizing books and keeping track of library records.",
-      tags: ["React", "JavaScript", "HTML"],
+        "	Developed a fully responsive NGO webpage from scratch using semantic HTML5 and CSS",
+      tags: ["HTML", "CSS"],
     },
   ];
 
@@ -22,8 +33,8 @@ function App() {
     <div className="portfolio">
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <a className="brand" href="#home" aria-label="tanuj portfolio home">
-            Tanuj<span>.</span>
+          <a className="brand" href="#home" aria-label="Vishnu Chaudhary portfolio home">
+            Vishnu Chaudhary<span>.</span>
           </a>
           <div className="nav-links">
             <a href="#about">About</a>
@@ -37,9 +48,9 @@ function App() {
       <main>
         <section className="hero" id="home">
           <div className="hero-copy">
-            <p className="eyebrow">MCA Student &amp; Web Developer</p>
+            <p className="eyebrow">MCA Student &amp; Software Developer</p>
             <h1>
-              Hi, I'm <span>Tanuj singh</span>
+              Hi, I'm <span>Vishnu Chaudhary</span>
             </h1>
             <p className="hero-description">
               I build clean, responsive and user-friendly websites using modern
@@ -66,7 +77,7 @@ function App() {
           </div>
           <div className="about-card">
             <p>
-              I am tanuj, a passionate web developer and MCA AIML student at GLA
+              I am Vishnu Chaudhary, a passionate Software developer and MCA student at GLA
               University. I enjoy turning ideas into polished digital experiences
               and continuously improving my skills.
             </p>
@@ -74,7 +85,7 @@ function App() {
               <span className="education-icon" aria-hidden="true">ED</span>
               <div>
                 <strong>Education</strong>
-                <p>Master of Computer Applications (MCA)</p>
+                <p>Master of Computer Applications (MCA AIML)</p>
               </div>
             </div>
           </div>
@@ -126,16 +137,16 @@ function App() {
             <h2>Have a project in mind?</h2>
           </div>
           <div className="contact-details">
-            <a href="mailto:singhtanuj2007@gmail.com">
-              singhtanuj2007@gmail.com
+            <a href="mailto:vishnuchar61@gmail.com">
+              vishnuchar61@gmail.com
             </a>
-            <a href="tel:+919315056750">+91 9315056750</a>
+            <a href="tel:+917060343103">+91 70603 43103</a>
           </div>
         </section>
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Tanuj. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Vishnu Chaudhary. All rights reserved.</p>
       </footer>
     </div>
   );
